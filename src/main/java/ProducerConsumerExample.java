@@ -63,9 +63,7 @@ public class ProducerConsumerExample {
 			catch(InterruptedException e) {
 				e.printStackTrace();
 			}
-			finally {
-				qLock.release();
-			}
+			//dont release finally as then there will be dual release of semaphores.
 		}
 		
 	}
@@ -97,9 +95,6 @@ public class ProducerConsumerExample {
 			}
 			catch(InterruptedException e) {
 				e.printStackTrace();
-			}
-			finally {
-				qLock.release();
 			}
 			
 		}
