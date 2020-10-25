@@ -54,7 +54,7 @@ public class BarberShopProblem {
 					mutex.acquire();
 					if(curWait == MAX_WAIT) {
 						System.out.println("could not find waiting space");
-						//mutex.release();
+						mutex.release();
 						break;
 					}
 					curWait++;
